@@ -1,0 +1,16 @@
+.structure {
+  @apply w-card 
+  h-card 
+  rounded-b-md 
+  overflow-hidden 
+  shadow-lg
+  m-3;
+}
+
+.animation {
+  @apply transition hover:scale-105  duration-100;
+}
+
+.animation-hover {
+  @apply hover:shadow-xl;
+}
