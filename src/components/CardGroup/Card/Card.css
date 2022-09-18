@@ -1,10 +1,34 @@
-.structure {
-  @apply w-card 
-  h-card 
-  rounded-b-md 
-  overflow-hidden 
-  shadow-lg
-  m-3;
+.card-container{
+  @apply h-card-pristine rounded-md shadow-lg overflow-hidden w-card m-3 border border-black;
+}
+
+.card-image-container{
+  @apply h-card-pristine-image w-full;
+}
+
+.card-image{
+  @apply w-full h-full object-cover object-center;
+}
+
+.card-body{
+  @apply px-2
+}
+
+.title-container{
+  @apply pt-1 flex flex-col;
+}
+
+.title{
+ @apply font-bold text-xl leading-6 truncate 
+}
+
+.subtitle{
+  margin-top: -2px; 
+  @apply text-sm leading-4
+ }
+
+.card-footer{
+ @apply px-2 text-gray-500 text-base mt-1;
 }
 
 .animation {

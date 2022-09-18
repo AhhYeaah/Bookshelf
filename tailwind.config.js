@@ -11,11 +11,20 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       height: {
-        'card': '26rem',
+        'card-pristine': '416px',
+        'card-pristine-image': '322px',
+
+        'card-touched-image': '191px'
       },
       width: {
-        'card': '20rem',
+        'card': '300px',
       },
+      maxHeight: {
+        'card-pristine': '416px',
+      },  
+      fontWeight: {
+        'extra-light': 100,
+      }
     },
   },
   plugins: [],

@@ -13,9 +13,9 @@ enum CardTimerType {
 
 export function CardTimerGroup({ createdAt, updatedAt }: CardTimerGroupProps) {
   return (
-    <div>
+    <>
       <CardTimer saidDate={createdAt} timerType={CardTimerType.CREATE} />
       <CardTimer saidDate={updatedAt} timerType={CardTimerType.UPDATE} />
-    </div>
+    </>
   );
 }
