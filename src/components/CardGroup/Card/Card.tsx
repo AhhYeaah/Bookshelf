@@ -16,14 +16,13 @@ interface CardProps {
 export function Card({
   props: { createdAt, title = 'placeholder', imageUrl, updatedAt, positionInGrid, subtitle },
 }: CardProps): JSX.Element {
-  let a;
-  const html = (
+  return (
     <section className="card-container group ">
       {/* img div */}
-      <div className="card-image-container transition-all duration-500 group-hover:h-[191px] relative">
-        <div className="w-full h-full opacity-0 group-hover:opacity-40 bg-black absolute bottom-0 left-0 transition-all duration-700 z-10"></div>
+      <div className="card-image-container">
+        <div className="black-filter"></div>
         <img
-          className="card-image group-hover:blur-[2px] transition-all delay-400  duration-300"
+          className="card-image"
           src={imageUrl}
           alt={`Imagem para o ${positionInGrid + 1}º card, de titulo: ${title}`}
         />
@@ -34,8 +33,8 @@ export function Card({
           <h1 className="title">{title}</h1>
           <h2 className="subtitle">{subtitle}</h2>
         </div>
-        <section className="invisible group-hover:visible h-0 delay-500 duration-500 transition-all overflow-hidden group-hover:h-[130px]">
-          <p ref={a} className="text-justify font-extralight pt-1">
+        <section className="description-container">
+          <p className="description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
             eaque, exercitationem praesentium nihil.aaaaaaaaaaaaaaaa a aa a
           </p>
@@ -47,6 +46,4 @@ export function Card({
       </section>
     </section>
   );
-  console.log(a);
-  return html;
 }

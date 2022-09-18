@@ -3,11 +3,15 @@
 }
 
 .card-image-container{
-  @apply h-card-pristine-image w-full;
+  @apply h-card-pristine-image w-full transition-all duration-500 group-hover:h-[191px] relative;
+}
+
+.black-filter{
+  @apply w-full h-full opacity-0 group-hover:opacity-40 bg-black absolute bottom-0 left-0 transition-all duration-700 z-10
 }
 
 .card-image{
-  @apply w-full h-full object-cover object-center;
+  @apply w-full h-full object-cover object-center group-hover:blur-[2px] transition-all duration-300;
 }
 
 .card-body{
@@ -23,10 +27,16 @@
 }
 
 .subtitle{
-  margin-top: -2px; 
-  @apply text-sm leading-4
+  @apply text-sm leading-4 -mt-0.5
  }
 
+ .description-container{
+  @apply invisible group-hover:visible h-0 duration-500 transition-all overflow-hidden group-hover:h-[130px]
+ }
+
+.description{
+  @apply text-justify text-base font-extralight pt-1
+}
 .card-footer{
  @apply px-2 text-gray-500 text-base mt-1;
 }
