@@ -1,6 +1,12 @@
 import { Card } from './components/CardGroup/Card/Card';
 import React from 'react';
 import { CardGroup } from './components/CardGroup/CardGroup';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
+import { LoginContainer } from './pages/Login/LoginContainer/LoginContainer';
+import { CadastroContainer } from './pages/Login/CadastroContainer/CadastroContainer';
+import { LoginPage } from './pages/Login/LoginPage';
+import { LandingPage } from './pages/Landing/LandingPage';
 
 interface Cards {
   title?: string;
@@ -11,15 +17,12 @@ interface Cards {
 }
 
 const cardsPlaceholder: Cards[] = [
-  // { createdAt: new Date(Date.now() - 110000), updatedAt: new Date(Date.now()) },
-  // { createdAt: new Date(Date.now() - 50000), updatedAt: new Date(Date.now() - 3000) },
   {
     createdAt: new Date(Date.now() - 3590000),
     title: 'A really really really long title',
     subtitle: 'Erland Continent',
     updatedAt: new Date(Date.now() - 3590000),
     imageUrl: 'https://v1.tailwindcss.com/img/card-top.jpg',
-    // imageUrl: 'https://picsum.photos/id/237/200/320',
   },
   {
     createdAt: new Date(Date.now() - 3590000),
@@ -27,18 +30,41 @@ const cardsPlaceholder: Cards[] = [
     subtitle: 'Kure clan leader',
     updatedAt: new Date(Date.now() - 3590000),
     imageUrl: 'https://cdn.discordapp.com/attachments/944342989910716510/1020926852807807028/unknown.png',
-    // imageUrl: 'https://picsum.photos/id/237/200/320',
   },
 ];
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <LandingPage></LandingPage>,
+  },
+  {
+    path: 'auth',
+    element: <LoginPage></LoginPage>,
+    children: [
+      {
+        path: 'login',
+        element: <LoginContainer></LoginContainer>,
+      },
+      {
+        path: 'cadastro',
+        element: <CadastroContainer></CadastroContainer>,
+      },
+    ],
+  },
+]);
 
 export function App() {
   return (
     <>
+      {/* <Sidebar></Sidebar>
       <CardGroup>
         {cardsPlaceholder.map((card, index) => {
           return <Card props={{ ...card, positionInGrid: index }} key={index} />;
         })}
       </CardGroup>
+      <Actions></Actions> */}
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }
