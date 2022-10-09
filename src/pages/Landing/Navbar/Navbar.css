@@ -2,6 +2,24 @@
     @apply px-5 flex items-center hover:text-blue-600 transition-colors duration-300 last:px-0
 }
 
-.login-button{
-    @apply bg-blue-600 rounded-md text-white hover:text-white hover:bg-blue-500 my-1 transition-colors duration-300
+.button {
+    @apply flex-col h-full visible sticky top-20
+}
+
+.openable[open]{
+    @apply flex-col absolute top-20 left-0 h-full visible overflow-visible px-7 bg-blue-300
+}
+
+.openable[open] .menu-button{
+   @apply w-screen
+}
+
+@media screen(lg) {
+    .openable[open]{
+        @apply flex-row static top-0 left-0 h-full visible overflow-visible px-0 bg-transparent
+    }
+
+    .openable[open] .menu-button{
+        @apply w-auto 
+    }
 }
