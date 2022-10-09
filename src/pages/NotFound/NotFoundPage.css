@@ -1,0 +1,44 @@
+.page{
+    @apply w-screen h-screen flex justify-center items-center overflow-hidden
+}
+
+.advise-container{
+    @apply grid grid-cols-5 grid-rows-3 lg:grid-rows-2 w-3/5 h-auto gap-4
+}
+
+.error-number-container{
+    @apply justify-self-center place-self-end lg:place-self-start lg:justify-self-end px-2 row-start-1 col-start-3 lg:col-start-1
+}
+
+.error-number{
+    @apply text-6xl text-blue-800
+}
+
+.message-container{
+    @apply col-span-5 lg:col-span-4 row-start-2 lg:row-start-1 px-2 border-l-4 mb-4 text-center lg:text-left 
+}
+
+.error-title{
+    @apply text-xl lg:text-4xl mb-4
+}
+
+.error-subtitle{
+    @apply text-slate-500 text-sm lg:text-base
+}
+
+.action-buttons{
+    @apply col-start-1 lg:col-start-2 col-span-5 lg:col-span-4 row-start-3 lg:row-start-2 justify-self-center lg:justify-self-start flex flex-col lg:flex-row
+}
+
+.go-back-button-div{
+    @apply mr-0 lg:mr-5 lg:ml-9 mb-4 lg:mb-0
+}
+
+.help-button-div{
+    @apply text-center flex flex-col
+}
+
+
+.help-button-description{
+    @apply text-xs text-slate-400 pt-1
+}
