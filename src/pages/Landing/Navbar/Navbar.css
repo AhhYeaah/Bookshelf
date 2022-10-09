@@ -1,7 +1,7 @@
 .menu-button{
-    @apply px-5 flex items-center hover:text-blue-600 transition-colors duration-300
+    @apply px-5 flex items-center hover:text-blue-600 transition-colors duration-300 last:px-0
 }
 
 .login-button{
-    @apply bg-blue-600 rounded-md text-white hover:text-white hover:bg-blue-500 my-1
+    @apply bg-blue-600 rounded-md text-white hover:text-white hover:bg-blue-500 my-1 transition-colors duration-300
 }
