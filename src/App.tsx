@@ -7,6 +7,7 @@ import { LoginContainer } from './pages/Login/LoginContainer/LoginContainer';
 import { CadastroContainer } from './pages/Login/CadastroContainer/CadastroContainer';
 import { LoginPage } from './pages/Login/LoginPage';
 import { LandingPage } from './pages/Landing/LandingPage';
+import { NotFoundPage } from './pages/NotFound/NotFoundPage';
 
 interface Cards {
   title?: string;
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage></LandingPage>,
+    errorElement: <NotFoundPage></NotFoundPage>,
   },
   {
     path: 'auth',
