@@ -7,7 +7,6 @@ import './NotFoundPage.css';
 
 export function NotFoundPage() {
   const places = ['forest', 'dungeon', 'place'];
-  //{`${places[Math.floor(Math.random() * 3)]}`}
 
   return (
     <div className="w-screen h-screen flex justify-center items-center overflow-hidden">
@@ -19,7 +18,7 @@ export function NotFoundPage() {
           <h1 className="text-xl lg:text-4xl mb-4">
             After playing with a group of kids, you reach into your pocket and notices that your map is gone
           </h1>
-          <span className="text-slate-500 text-sm lg:text-base">Those damn kids... FUUUUUUUUU</span>
+          <span className="text-slate-500 text-sm lg:text-base">Those damn kids...</span>
         </div>
         <div className="col-start-1 lg:col-start-2 col-span-5 lg:col-span-4 row-start-3 lg:row-start-2 justify-self-center lg:justify-self-start flex flex-col lg:flex-row">
           <div className="mr-0 lg:mr-5 lg:ml-9 mb-4 lg:mb-0">
