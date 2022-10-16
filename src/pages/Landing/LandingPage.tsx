@@ -8,7 +8,7 @@ export function LandingPage() {
   return (
     <>
       <Navbar></Navbar>
-      <main className="h-screen">
+      <main className="h-auto py-10 lg:py-0 lg:h-screen ">
         <section className=" h-3/4 flex justify-center items-center flex-row ">
           <div className="container flex justify-between items-center flex-col lg:flex-row p-4">
             <div className="w-2/3 lg:w-1/3 mb-20 lg:mb-0">
