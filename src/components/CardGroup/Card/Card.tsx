@@ -17,7 +17,7 @@ export function Card({
   props: { createdAt, title = 'placeholder', imageUrl, updatedAt, positionInGrid, subtitle },
 }: CardProps): JSX.Element {
   return (
-    <section className=" h-card-pristine rounded-md shadow-lg overflow-hidden w-card m-3 border border-black ">
+    <section className="h-card-pristine rounded-md shadow-lg overflow-hidden w-card m-3 border border-black ">
       {/* img div */}
       <div className="h-card-pristine-image w-full transition-all duration-500 group-hover:h-[191px] relative">
         <div className="w-full h-full opacity-0 group-hover:opacity-40 bg-black absolute bottom-0 left-0 transition-all duration-700 z-10"></div>
