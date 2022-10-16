@@ -1,0 +1,29 @@
+.navbar-openable{
+    @apply hidden invisible 
+}
+
+.navbar-button{
+    /* desktop */
+    @apply lg:w-full lg:h-full lg:px-5;
+    /* smarthpone, tablet */
+    @apply /* container */ flex justify-between mx-auto px-7 py-2;
+    /* both */
+    @apply hover:text-blue-600 transition-colors duration-300 items-center; 
+}
+
+/* WHEN OPEN */
+
+.navbar-openable[open]{
+    @apply flex visible
+}
+
+.navbar-openable[open] .navbar-openable-child-container {
+    @apply w-full bg-white border-b 
+}
+
+
+.navbar-openable[open] .navbar-button{
+    /* container can't be overwrited */
+    @apply container
+}
+
