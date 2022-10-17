@@ -1,9 +1,12 @@
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
 import { Navbar } from './Navbar/Navbar';
+
 export function LandingPage() {
   return (
     <>
@@ -32,7 +35,7 @@ export function LandingPage() {
                 </Link>
               </div>
             </div>
-            <img src="https://mrpg.app/assets/img/hero-img.png" className="w-3/5 h-3/5 " alt="" />
+            <img src="https://mrpg.app/assets/img/hero-img.png" className="w-4/5 h-4/5 sm:w-3/5 sm:h-3/5 " alt="" />
           </div>
         </section>
       </main>
