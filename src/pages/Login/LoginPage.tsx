@@ -20,7 +20,7 @@ export function LoginPage() {
       <div className="z-20 bg-white grid grid-cols-5 col flex-col container xl:max-w-screen-xl mx-4 h-2/3 rounded-md">
         <div>
           <img src="https://mrpg.app/assets/img/logo.png" width={120} />
-
+          {/* oof, almost lost my streak */}
           <Outlet></Outlet>
         </div>
         <div className="col-start-3 col-span-3">
