@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Outlet, useHref } from 'react-router-dom';
 
 import mapaUrl from '../../assets/mapa.jpg';
 import lighterMapUrl from '../../assets/mapa2.jpg';
 
+enum AuthPages {
+  LOGIN = 'login',
+  CADASTRO = 'cadastro',
+}
+
 export function LoginPage() {
-  const [darkMode, changeLightMode] = useState(false);
+  const [darkMode, changeLightMode] = useState(true);
+  const [currentForm, changeCurrentForm] = useState<AuthPages>(AuthPages.LOGIN);
+
+  useEffect(() => {
+    console.log('b');
+  });
+  // console.log(currentForm);
+
   return (
     // background, yep it was necessary.
     <div className="h-screen w-screen flex justify-center items-center">
@@ -17,11 +29,10 @@ export function LoginPage() {
           className="-z-20 w-full h-full relative scale-105 blur-lg  overflow-hidden"
         />
       </div>
-      <div className="z-20 bg-white grid grid-cols-5 col flex-col container xl:max-w-screen-xl mx-4 h-2/3 rounded-md">
-        <div>
+      <div className="z-20 bg-white grid grid-cols-5 flex-col container xl:max-w-screen-xl mx-4 h-2/3 rounded-md">
+        <div className="py-10 flex flex-col items-center col-span-2 col-start-1">
           <img src="https://mrpg.app/assets/img/logo.png" width={120} />
-          {/* oof, almost lost my streak */}
-          <Outlet></Outlet>
+          <Outlet context={[changeCurrentForm]}></Outlet>
         </div>
         <div className="col-start-3 col-span-3">
           <img src={mapaUrl} className="w-full h-full" alt="" />
