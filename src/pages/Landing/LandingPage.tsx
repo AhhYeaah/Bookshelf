@@ -19,13 +19,14 @@ export function LandingPage() {
                 Create your world <br /> Keep your change
               </h2>
               <p className="text-base text-justify font-extralight">
-                This image here on the right side is from a site called{' '}
-                <a className="link text-cyan-700" href="mrpg.app">
+                As this would be a lorem ipsulun text, i might aswell use it. This site is just a clone for studying, I
+                have no intention using this for comercial purposes. The image here on the right side and the logo is
+                from a site called{' '}
+                <a className="link text-cyan-700" href="https://mrpg.app">
                   mrpg.app
                 </a>{' '}
-                They have a cool project about making an chat app excluively for tabletop rpg players. Its realy awesome
-                and you should check it out. Ok, back to lorem ipsulun quas fugit deleniti natus, distinctio nobis
-                repellat facilis quam et quae.
+                They have a really cool project about making an chat app excluively for tabletop rpg players. Its realy
+                awesome and you should check it out. I do not own any of the images, all rights to him.
               </p>
               <div className="w-full flex justify-end ">
                 <Link to={'/auth/cadastro'}>
