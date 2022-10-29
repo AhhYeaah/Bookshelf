@@ -1,13 +1,14 @@
 import { Card } from './components/CardGroup/Card/Card';
 import React from 'react';
 import { CardGroup } from './components/CardGroup/CardGroup';
-import { Sidebar } from './components/Sidebar/Sidebar';
+import { Sidebar } from './pages/Dashboard/Sidebar/Sidebar';
 import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
 import { LoginContainer } from './pages/Login/LoginContainer/LoginContainer';
 import { CadastroContainer } from './pages/Login/CadastroContainer/CadastroContainer';
 import { LoginPage } from './pages/Login/LoginPage';
 import { LandingPage } from './pages/Landing/LandingPage';
 import { NotFoundPage } from './pages/NotFound/NotFoundPage';
+import { DashboardPage } from './pages/Dashboard/DashboardPage';
 
 interface Cards {
   title?: string;
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage></LandingPage>,
+    errorElement: <NotFoundPage></NotFoundPage>,
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardPage></DashboardPage>,
     errorElement: <NotFoundPage></NotFoundPage>,
   },
   {
