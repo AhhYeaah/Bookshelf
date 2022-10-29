@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
+import { TextInput } from '../../../components/Form/TextInput/TextInput';
 import { PrimaryButton } from '../../../components/PrimaryButton/PrimaryButton';
 
 export function LoginContainer(props: any) {
@@ -10,27 +11,24 @@ export function LoginContainer(props: any) {
   });
 
   return (
-    <div className="flex flex-col items-center justify-between">
+    <div className="flex flex-col items-center justify-center">
       <h1>Login</h1>
-      <form className="flex flex-col">
+      <form className="flex flex-col justify-center">
         <div>
-          <label htmlFor="email">Email</label>
-          <br />
-          <input type="email" name="email" id="" className="border" />
+          <TextInput name="email" id="emailInput" type="email"></TextInput>
+          <TextInput name="password" id="passwordInput" type="password"></TextInput>
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <br />
-          <input type="password" name="password" id="" className="border" />
-        </div>
-        <span className="text-blue-600 self-end">Forgot password?</span>
-        <PrimaryButton className="rounded-full">Sign in</PrimaryButton>
-        <span className="self-center"> Or</span>
-        <PrimaryButton>Google button</PrimaryButton>
-        <Link to="/auth/cadastro">
-          <span>New here? Grab a glass of beer.</span>
-        </Link>
       </form>
+      <span className="text-blue-600 self-end">Forgot password?</span>
+
+      <PrimaryButton className="rounded-full">Sign in</PrimaryButton>
+
+      <span>Or</span>
+
+      <PrimaryButton>Google button</PrimaryButton>
+      <Link to="/auth/cadastro">
+        <span>New here? Grab a glass of beer.</span>
+      </Link>
     </div>
   );
 }

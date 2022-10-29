@@ -30,8 +30,8 @@ export function LoginPage() {
         />
       </div>
       <div className="z-20 bg-white grid grid-cols-5 flex-col container xl:max-w-screen-xl mx-4 h-2/3 rounded-md">
-        <div className="py-10 flex flex-col items-center col-span-2 col-start-1">
-          <img src="https://mrpg.app/assets/img/logo.png" width={120} />
+        <div className="py-10 flex flex-col  col-span-2 col-start-1">
+          <img src="https://mrpg.app/assets/img/logo.png" width={120} className="" />
           <Outlet context={[changeCurrentForm]}></Outlet>
         </div>
         <div className="col-start-3 col-span-3">
