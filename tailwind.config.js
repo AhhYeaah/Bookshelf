@@ -24,10 +24,6 @@ module.exports = {
       },  
       fontWeight: {
         'extra-light': 100,
-      },
-      gridTemplateColumns: {
-        'open-sidebar': '260px 1fr',
-        'closed-sidebar': '70px 1fr',
       }
     },
   },

@@ -9,7 +9,7 @@ export function NotFoundPage() {
   const places = ['forest', 'dungeon', 'place'];
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center overflow-hidden">
+    <div className="w-screen h-screen flex-center overflow-hidden">
       <div className="grid grid-cols-5 grid-rows-3 lg:grid-rows-2 w-3/5 h-auto gap-4">
         <div className="justify-self-center place-self-end lg:place-self-start lg:justify-self-end px-2 row-start-1 col-start-3 lg:col-start-1">
           <span className="text-6xl text-blue-800">404</span>

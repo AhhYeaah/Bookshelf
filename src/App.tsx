@@ -9,6 +9,7 @@ import { LoginPage } from './pages/Login/LoginPage';
 import { LandingPage } from './pages/Landing/LandingPage';
 import { NotFoundPage } from './pages/NotFound/NotFoundPage';
 import { DashboardPage } from './pages/Dashboard/DashboardPage';
+import { IndexComponent } from './pages/Dashboard/IndexComponent/IndexComponent';
 
 interface Cards {
   title?: string;
@@ -45,6 +46,12 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <DashboardPage></DashboardPage>,
     errorElement: <NotFoundPage></NotFoundPage>,
+    children: [
+      {
+        path: '',
+        element: <IndexComponent></IndexComponent>,
+      },
+    ],
   },
   {
     path: 'auth',
