@@ -1,4 +1,5 @@
 import React from 'react';
+import { capitalizeFirstLetter } from '../../../utils/Text';
 
 interface TextInputProps {
   name: string;
@@ -8,10 +9,6 @@ interface TextInputProps {
 }
 
 export function TextInput({ name, type, id, placeholder }: TextInputProps) {
-  function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-  }
-
   return (
     <div className="flex flex-col">
       <label htmlFor={name.toLowerCase()}>{capitalizeFirstLetter(name)}</label>
