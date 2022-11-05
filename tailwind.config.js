@@ -6,13 +6,14 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    colors: {
-      "sidebar-bg": "#313a46",
-      "sidebar-item": "#8391a2",
-      "sidebar-item-hover": "#bccee4",
-      "sidebar-item-active": "#fff",
-    },
+    
     extend: {
+      colors: {
+        "sidebar-bg": "#313a46",
+        "sidebar-item": "#8391a2",
+        "sidebar-item-hover": "#bccee4",
+        "sidebar-item-active": "#fff",
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
