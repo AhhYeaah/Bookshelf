@@ -19,6 +19,7 @@ export function Sidebar({ open }: { open: boolean }) {
           <Logo dark={true} className="h-[27px]" minified={!open} />
         </div>
       </Link>
+
       {/* Sidebar Body */}
       <SidebarSection name="navigation">
         <SidebarButton name="Home" icon={faHouse}>
