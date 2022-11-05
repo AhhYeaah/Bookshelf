@@ -2,14 +2,13 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navbar } from '../Landing/Navbar/Navbar';
 import { Sidebar } from './Sidebar/Sidebar';
 
 export function DashboardPage() {
   // Yeah, ikr. Its weird how the dashboard has to maintain the sidebar state.
   // But thats exactly how it's supposed to be done. State lifting
   // https://reactjs.org/docs/lifting-state-up.html
-  const [sidebarState, toggleSidebar] = useState(false);
+  const [sidebarState, toggleSidebar] = useState(true);
 
   return (
     <div className="flex flex-row h-screen w-screen">
