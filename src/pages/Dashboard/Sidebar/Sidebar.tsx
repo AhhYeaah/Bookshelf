@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../../../components/Logo/Logo';
 import { SidebarButton } from './SidebarSection/SidebarButton/SidebarButton';
 import { SidebarSection } from './SidebarSection/SidebarSection';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faCar } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faHouse, faCar } from '@fortawesome/free-solid-svg-icons';
+import { SidebarExpandableButton } from './SidebarSection/SidebarExpandableButton/SidebarExpandableButton';
 
 export function Sidebar({ open }: { open: boolean }) {
   return (
     <div
-      className="h-full transition-all duration-500 text-sidebar-item bg-sidebar-bg open:w-[260px] w-[70px] shrink-0"
+      className={
+        'h-full z-20 transition-all duration-500 text-sidebar-item bg-sidebar-bg open:w-[260px] w-[70px] shrink-0 ' +
+        (open ? 'overflow-hidden' : 'overflow-visible')
+      }
       open={open}
     >
       {/* Logo */}
@@ -21,7 +23,7 @@ export function Sidebar({ open }: { open: boolean }) {
       </Link>
 
       {/* Sidebar Body */}
-      <SidebarSection name="navigation">
+      <SidebarSection name="navigation" minify={open}>
         <SidebarButton name="Home" icon={faHouse}>
           <SidebarButton name="Level">
             <SidebarButton name="Level"></SidebarButton>
@@ -37,7 +39,7 @@ export function Sidebar({ open }: { open: boolean }) {
           </SidebarButton>
           <SidebarButton name="Level"></SidebarButton>
         </SidebarButton>
-        <SidebarButton name="Eventos" icon={faCalendar}>
+        <SidebarButton name="Eventos" icon={faCalendar} minify={open}>
           <SidebarButton name="Level">
             <SidebarButton name="Level"></SidebarButton>
           </SidebarButton>
@@ -45,22 +47,22 @@ export function Sidebar({ open }: { open: boolean }) {
         </SidebarButton>
       </SidebarSection>
 
-      <SidebarSection name="apps">
-        <SidebarButton name="Viagens" icon={faCar}>
-          <SidebarButton name="Level">
+      <SidebarSection name="apps" minify={open}>
+        <SidebarExpandableButton name="Viagens" icon={faCar}>
+          <SidebarExpandableButton name="Level">
             <SidebarButton name="Level"></SidebarButton>
-            <SidebarButton name="Level">
-              <SidebarButton name="Level">
+            <SidebarExpandableButton name="Level">
+              <SidebarExpandableButton name="Level">
                 <SidebarButton name="Level"></SidebarButton>
                 <SidebarButton name="Level"></SidebarButton>
-                <SidebarButton name="Level">
+                <SidebarExpandableButton name="Level">
                   <SidebarButton name="Level"></SidebarButton>
-                </SidebarButton>
-              </SidebarButton>
-            </SidebarButton>
-          </SidebarButton>
+                </SidebarExpandableButton>
+              </SidebarExpandableButton>
+            </SidebarExpandableButton>
+          </SidebarExpandableButton>
           <SidebarButton name="Level"></SidebarButton>
-        </SidebarButton>
+        </SidebarExpandableButton>
       </SidebarSection>
     </div>
   );
