@@ -1,5 +1,4 @@
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -26,12 +25,15 @@ export function SidebarButton({ children, to = '/placeholder', level, name, icon
   const sizes = sidebarLevel === 1 ? 'pl-8 pt-1' : `pl-5 pt-1`;
   const faAngle = buttonOpen ? faAngleDown : faAngleRight;
 
-  //This breaks the single responsability principle.
+  // This breaks the single responsability principle.
   switch (thisButtonType(children)) {
     case 'button':
       return (
-        <div className={sizes}>
-          <Link to={to} className={'hover:text-sidebar-item-hover' + (buttonOpen ? ' text-sidebar-item-active' : '')}>
+        <div className={sizes + ' group cursor-pointer'}>
+          <Link
+            to={to}
+            className={'group-hover:text-sidebar-item-hover' + (buttonOpen ? ' text-sidebar-item-active' : '')}
+          >
             <h3>{capitalizeFirstLetter(name) + ' ' + sidebarLevel} </h3>
           </Link>
         </div>
@@ -39,20 +41,21 @@ export function SidebarButton({ children, to = '/placeholder', level, name, icon
       break;
     case 'button-group':
       return (
-        <div className={sizes}>
+        <div className={sizes + ''}>
           <div
-            className={'flex justify-between' + (buttonOpen ? ' text-sidebar-item-active' : '')}
+            className={
+              'flex justify-between cursor-pointer hover:text-sidebar-item-hover' +
+              (buttonOpen ? ' text-sidebar-item-active' : '')
+            }
             onClick={() => changeButtonOpen(!buttonOpen)}
           >
-            <div className={'hover:text-sidebar-item-hover'}>
+            <div>
               {icon && <FontAwesomeIcon icon={icon} className="mr-3" width={18}></FontAwesomeIcon>}
               <span>
                 {capitalizeFirstLetter(name)} {icon ? '' : +sidebarLevel}
               </span>
             </div>
-            <FontAwesomeIcon icon={faAngle} className="self-center">
-              {' '}
-            </FontAwesomeIcon>
+            <FontAwesomeIcon icon={faAngle} className="self-center"></FontAwesomeIcon>
           </div>
           <ul className="open:hidden" open={!buttonOpen}>
             {/* props cant be changed, so here I have to clone other sidebarButtons to dinamicaly implement level prop */}
@@ -67,10 +70,11 @@ export function SidebarButton({ children, to = '/placeholder', level, name, icon
       break;
     case 'single-button-button-group':
       return (
-        <div className={sizes}>
+        <div className={sizes + 'cursor-pointer'}>
           <div
             className={
-              ' flex justify-between hover:text-sidebar-item-hover' + (buttonOpen ? ' text-sidebar-item-active' : '')
+              ' flex justify-between cursor-pointer hover:text-sidebar-item-hover' +
+              (buttonOpen ? ' text-sidebar-item-active' : '')
             }
             onClick={() => changeButtonOpen(!buttonOpen)}
           >
