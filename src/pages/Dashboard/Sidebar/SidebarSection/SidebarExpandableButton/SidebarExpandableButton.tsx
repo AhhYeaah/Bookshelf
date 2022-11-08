@@ -1,10 +1,9 @@
 import { faAngleRight, faAngleDown, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Children, ReactNode, useEffect, useState } from 'react';
+import React, { Children, ReactNode, useState } from 'react';
 import { capitalizeFirstLetter } from '../../../../../utils/Text';
 
 interface SidebarButtonProps {
-  to?: string;
   level?: number;
   minify?: boolean;
   name: string;
@@ -12,14 +11,7 @@ interface SidebarButtonProps {
   children?: ReactNode | ReactNode[];
 }
 
-export function SidebarExpandableButton({
-  children,
-  to = '/placeholder',
-  level = 0,
-  minify,
-  name,
-  icon,
-}: SidebarButtonProps) {
+export function SidebarExpandableButton({ children, level = 0, minify, name, icon }: SidebarButtonProps) {
   const [buttonOpen, changeButtonOpen] = useState(false);
 
   // First one has more space because of the icon.
@@ -34,7 +26,7 @@ export function SidebarExpandableButton({
       <div className={sizes}>
         <button
           className={
-            ' flex justify-between w-full ' +
+            ' flex justify-between w-full focus:ring ' +
             (buttonOpen ? 'text-sidebar-item-active ' : 'hover:text-sidebar-item-hover')
           }
           onClick={() => changeButtonOpen(!buttonOpen)}
@@ -42,7 +34,7 @@ export function SidebarExpandableButton({
           <div>
             {icon != null && <FontAwesomeIcon icon={icon} className="mr-3" width={18}></FontAwesomeIcon>}
             <span>
-              {capitalizeFirstLetter(name)} {icon ? '' : +level}
+              {capitalizeFirstLetter(name)} {icon != null ? '' : +level}
             </span>
           </div>
           <FontAwesomeIcon icon={faAngle} className="self-center"></FontAwesomeIcon>
@@ -66,28 +58,30 @@ export function SidebarExpandableButton({
     );
   } else {
     element = (
-      <div
-        className={
-          'flex flex-row items-center ' + 'group-hover:text-sidebar-item-active group-focus:text-sidebar-item-active'
-        }
-      >
-        <div
-          className={'flex-center h-14 w-[70px] flex-shrink-0 ' + 'group-hover:bg-[#727cf5] group-focus:bg-[#727cf5]'}
-        >
-          {icon != null && <FontAwesomeIcon icon={icon} width={18}></FontAwesomeIcon>}
-        </div>
+      <div className="group" tabIndex={0}>
         <div
           className={
-            'hidden w-[190px] flex-shrink-0 h-[56px] px-4 items-center ' +
-            'group-focus:bg-[#727cf5] group-focus:flex ' +
-            'group-hover:bg-[#727cf5] group-hover:flex'
+            'flex flex-row items-center ' + 'group-hover:text-sidebar-item-active group-focus:text-sidebar-item-active'
           }
         >
-          {name}
+          <div
+            className={'flex-center h-14 w-[70px] flex-shrink-0 ' + 'group-hover:bg-[#727cf5] group-focus:bg-[#727cf5]'}
+          >
+            {icon != null && <FontAwesomeIcon icon={icon} width={18}></FontAwesomeIcon>}
+          </div>
+          <div
+            className={
+              'hidden w-[190px] flex-shrink-0 h-[56px] px-4 items-center ' +
+              'group-focus:bg-[#727cf5] group-focus:flex ' +
+              'group-hover:bg-[#727cf5] group-hover:flex'
+            }
+          >
+            {name}
+          </div>
         </div>
       </div>
     );
   }
 
-  return <button className="group">{element}</button>;
+  return element;
 }
