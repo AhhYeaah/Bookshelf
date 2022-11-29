@@ -5,6 +5,7 @@ import { SidebarButton } from './SidebarSection/SidebarButton/SidebarButton';
 import { SidebarSection } from './SidebarSection/SidebarSection';
 import { faCalendar, faHouse, faCar } from '@fortawesome/free-solid-svg-icons';
 import { SidebarExpandableButton } from './SidebarSection/SidebarExpandableButton/SidebarExpandableButton';
+import { SidebarButtonFactory } from './SidebarSection/SidebarButtonFactory/SidebarButtonFactory';
 
 export function Sidebar({ open }: { open: boolean }) {
   return (
@@ -23,32 +24,22 @@ export function Sidebar({ open }: { open: boolean }) {
       </Link>
 
       {/* Sidebar Body */}
-      <SidebarSection name="navigation" minify={open}>
-        <SidebarButton name="Home" icon={faHouse}>
-          <SidebarButton name="Level">
-            <SidebarButton name="Level"></SidebarButton>
-            <SidebarButton name="Level">
-              <SidebarButton name="Level">
-                <SidebarButton name="Level"></SidebarButton>
-                <SidebarButton name="Level"></SidebarButton>
-                <SidebarButton name="Level">
-                  <SidebarButton name="Level"></SidebarButton>
-                </SidebarButton>
-              </SidebarButton>
-            </SidebarButton>
-          </SidebarButton>
-          <SidebarButton name="Level"></SidebarButton>
-        </SidebarButton>
-        <SidebarButton name="Eventos" icon={faCalendar} minify={open}>
-          <SidebarButton name="Level">
-            <SidebarButton name="Level"></SidebarButton>
-          </SidebarButton>
-          <SidebarButton name="Level"></SidebarButton>
-        </SidebarButton>
+      <SidebarSection name="navigation" minify={!open}>
+        <SidebarButtonFactory name="Home" icon={faHouse}>
+          <SidebarButtonFactory name="Level 1"></SidebarButtonFactory>
+        </SidebarButtonFactory>
+        <SidebarButtonFactory name="Level 1" icon={faHouse}>
+          <SidebarButtonFactory name="Level 1">
+            <SidebarButtonFactory name="Level 1">
+              <SidebarButtonFactory name="Level 1"></SidebarButtonFactory>
+            </SidebarButtonFactory>
+          </SidebarButtonFactory>
+        </SidebarButtonFactory>
+        <SidebarButtonFactory name="Eventos" icon={faCalendar} to="/index"></SidebarButtonFactory>
       </SidebarSection>
 
-      <SidebarSection name="apps" minify={open}>
-        <SidebarExpandableButton name="Viagens" icon={faCar}>
+      <SidebarSection name="navigation" minify={!open}>
+        <SidebarExpandableButton name="Home" icon={faHouse}>
           <SidebarExpandableButton name="Level">
             <SidebarButton name="Level"></SidebarButton>
             <SidebarExpandableButton name="Level">
@@ -61,6 +52,23 @@ export function Sidebar({ open }: { open: boolean }) {
               </SidebarExpandableButton>
             </SidebarExpandableButton>
           </SidebarExpandableButton>
+          <SidebarButton name="Level"></SidebarButton>
+        </SidebarExpandableButton>
+        <SidebarButton name="Eventos" icon={faCalendar}>
+          <SidebarButton name="Level">
+            <SidebarButton name="Level"></SidebarButton>
+          </SidebarButton>
+          <SidebarButton name="Level"></SidebarButton>
+        </SidebarButton>
+      </SidebarSection>
+
+      <SidebarSection name="apps" minify={!open}>
+        <SidebarExpandableButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level"></SidebarButton>
+          <SidebarButton name="Level"></SidebarButton>
+        </SidebarExpandableButton>
+        <SidebarExpandableButton name="Home" icon={faHouse}>
+          <SidebarExpandableButton name="Level"></SidebarExpandableButton>
           <SidebarButton name="Level"></SidebarButton>
         </SidebarExpandableButton>
       </SidebarSection>

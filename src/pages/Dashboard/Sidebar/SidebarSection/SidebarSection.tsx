@@ -3,7 +3,7 @@ import React, { Children } from 'react';
 export function SidebarSection({ children, name, minify = false }: any) {
   const childrenArray = Children.toArray(children);
 
-  if (minify === true) {
+  if (minify === false) {
     return (
       <div className="pt-3 px-6 select-none">
         <span className="text-sm">{name?.toUpperCase() ?? 'placeholder'}</span>

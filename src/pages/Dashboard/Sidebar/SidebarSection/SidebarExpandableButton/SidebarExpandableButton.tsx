@@ -21,12 +21,12 @@ export function SidebarExpandableButton({ children, level = 0, minify, name, ico
   const faAngle = buttonOpen ? faAngleDown : faAngleRight;
 
   let element;
-  if (minify === true) {
+  if (minify === false) {
     element = (
-      <div className={sizes}>
+      <div className={sizes + ' flex-grow-0 flex-shrink-0'}>
         <button
           className={
-            ' flex justify-between w-full focus:ring ' +
+            ' flex justify-between w-full overflow-hidden ' +
             (buttonOpen ? 'text-sidebar-item-active ' : 'hover:text-sidebar-item-hover')
           }
           onClick={() => changeButtonOpen(!buttonOpen)}
@@ -72,7 +72,7 @@ export function SidebarExpandableButton({ children, level = 0, minify, name, ico
           <div
             className={
               'hidden w-[190px] flex-shrink-0 h-[56px] px-4 items-center ' +
-              'group-focus:bg-[#727cf5] group-focus:flex ' +
+              ' group-focus:bg-[#727cf5] group-focus:flex ' +
               'group-hover:bg-[#727cf5] group-hover:flex'
             }
           >

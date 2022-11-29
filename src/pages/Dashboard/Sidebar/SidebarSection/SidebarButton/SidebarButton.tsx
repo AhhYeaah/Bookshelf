@@ -18,7 +18,7 @@ export function SidebarButton({ to = '/placeholder', level = 0, minify, name, ic
 
   let element;
 
-  if (minify === true) {
+  if (minify === false) {
     element = (
       <div className={sizes}>
         <div className={'flex justify-between '}>
