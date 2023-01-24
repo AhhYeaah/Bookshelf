@@ -7,7 +7,7 @@
     "plugin:react/recommended",
     "standard-with-typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "overrides": [],
   "parserOptions": {
@@ -17,15 +17,13 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 120
-      },
-      {
-        "usePrettierrc": true
+        "endOfLine": "auto"
       }
-    ],
-    "@typescript-eslint/explicit-function-return-type": 0
+    ]
   }
 }
