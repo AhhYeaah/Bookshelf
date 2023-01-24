@@ -1,22 +1,19 @@
-import { Card } from './components/CardGroup/Card/Card';
-import React from 'react';
-import { CardGroup } from './components/CardGroup/CardGroup';
-import { Sidebar } from './pages/Dashboard/Sidebar/Sidebar';
-import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
-import { LoginContainer } from './pages/Login/LoginContainer/LoginContainer';
-import { CadastroContainer } from './pages/Login/CadastroContainer/CadastroContainer';
-import { LoginPage } from './pages/Login/LoginPage';
-import { LandingPage } from './pages/Landing/LandingPage';
-import { NotFoundPage } from './pages/NotFound/NotFoundPage';
-import { DashboardPage } from './pages/Dashboard/DashboardPage';
-import { IndexComponent } from './pages/Dashboard/IndexComponent/IndexComponent';
+import React from 'react'
+import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom'
+import { LoginContainer } from './pages/Login/LoginContainer/LoginContainer'
+import { CadastroContainer } from './pages/Login/CadastroContainer/CadastroContainer'
+import { LoginPage } from './pages/Login/LoginPage'
+import { LandingPage } from './pages/Landing/LandingPage'
+import { NotFoundPage } from './pages/NotFound/NotFoundPage'
+import { DashboardPage } from './pages/Dashboard/DashboardPage'
+import { IndexComponent } from './pages/Dashboard/IndexComponent/IndexComponent'
 
 interface Cards {
-  title?: string;
-  subtitle: string;
-  imageUrl?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  title?: string
+  subtitle: string
+  imageUrl?: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 const cardsPlaceholder: Cards[] = [
@@ -34,7 +31,7 @@ const cardsPlaceholder: Cards[] = [
     updatedAt: new Date(Date.now() - 3590000),
     imageUrl: 'https://cdn.discordapp.com/attachments/944342989910716510/1020926852807807028/unknown.png',
   },
-];
+]
 
 const router = createBrowserRouter([
   {
@@ -67,7 +64,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
 export function App() {
   return (
@@ -81,5 +78,5 @@ export function App() {
       <Actions></Actions> */}
       <RouterProvider router={router}></RouterProvider>
     </>
-  );
+  )
 }

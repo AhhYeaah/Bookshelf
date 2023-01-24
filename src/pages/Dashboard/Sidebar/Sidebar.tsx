@@ -1,77 +1,227 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from '../../../components/Logo/Logo';
-import { SidebarButton } from './SidebarSection/SidebarButton/SidebarButton';
-import { SidebarSection } from './SidebarSection/SidebarSection';
-import { faCalendar, faHouse, faCar } from '@fortawesome/free-solid-svg-icons';
-import { SidebarExpandableButton } from './SidebarSection/SidebarExpandableButton/SidebarExpandableButton';
-import { SidebarButtonFactory } from './SidebarSection/SidebarButtonFactory/SidebarButtonFactory';
+import React from 'react'
+import { faCalendar, faHouse } from '@fortawesome/free-solid-svg-icons'
+import SimpleBar from 'simplebar-react'
+import 'simplebar-react/dist/simplebar.min.css'
+import './Sidebar.css'
+import { SidebarLogo } from './SidebarLogo/SidebarLogo'
+import { SidebarContent } from './SidebarContent/SidebarContent'
+import { SidebarSection } from './SidebarContent/SidebarSection/SidebarSection'
+import SidebarButton from './SidebarContent/SidebarSection/SidebarButton/SidebarButton'
 
-export function Sidebar({ open }: { open: boolean }) {
+function getSidebarContent(open: boolean, isMobile: boolean) {
   return (
-    <div
-      className={
-        'h-full z-20 transition-all duration-500 text-sidebar-item bg-sidebar-bg open:w-[260px] w-[70px] shrink-0 ' +
-        (open ? 'overflow-hidden' : 'overflow-visible')
-      }
-      open={open}
-    >
-      {/* Logo */}
-      <Link to={'/dashboard'}>
-        <div className="h-16 flex-center">
-          <Logo dark={true} className="h-[27px]" minified={!open} />
-        </div>
-      </Link>
-
-      {/* Sidebar Body */}
-      <SidebarSection name="navigation" minify={!open}>
-        <SidebarButtonFactory name="Home" icon={faHouse}>
-          <SidebarButtonFactory name="Level 1"></SidebarButtonFactory>
-        </SidebarButtonFactory>
-        <SidebarButtonFactory name="Level 1" icon={faHouse}>
-          <SidebarButtonFactory name="Level 1">
-            <SidebarButtonFactory name="Level 1">
-              <SidebarButtonFactory name="Level 1"></SidebarButtonFactory>
-            </SidebarButtonFactory>
-          </SidebarButtonFactory>
-        </SidebarButtonFactory>
-        <SidebarButtonFactory name="Eventos" icon={faCalendar} to="/index"></SidebarButtonFactory>
-      </SidebarSection>
-
-      <SidebarSection name="navigation" minify={!open}>
-        <SidebarExpandableButton name="Home" icon={faHouse}>
-          <SidebarExpandableButton name="Level">
-            <SidebarButton name="Level"></SidebarButton>
-            <SidebarExpandableButton name="Level">
-              <SidebarExpandableButton name="Level">
-                <SidebarButton name="Level"></SidebarButton>
-                <SidebarButton name="Level"></SidebarButton>
-                <SidebarExpandableButton name="Level">
-                  <SidebarButton name="Level"></SidebarButton>
-                </SidebarExpandableButton>
-              </SidebarExpandableButton>
-            </SidebarExpandableButton>
-          </SidebarExpandableButton>
-          <SidebarButton name="Level"></SidebarButton>
-        </SidebarExpandableButton>
-        <SidebarButton name="Eventos" icon={faCalendar}>
-          <SidebarButton name="Level">
-            <SidebarButton name="Level"></SidebarButton>
+    <SidebarContent isMinified={!open && !isMobile}>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 2"></SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
           </SidebarButton>
-          <SidebarButton name="Level"></SidebarButton>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1"></SidebarButton>
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
         </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
       </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+      <SidebarSection name="navigation">
+        <SidebarButton name="Home" icon={faHouse}>
+          <SidebarButton name="Level 1"></SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Level 1" icon={faHouse}>
+          <SidebarButton name="Level 1">
+            <SidebarButton name="Level 1">
+              <SidebarButton name="Level 1"></SidebarButton>
+            </SidebarButton>
+          </SidebarButton>
+        </SidebarButton>
+        <SidebarButton name="Eventos" icon={faCalendar} link="/index"></SidebarButton>
+      </SidebarSection>
+    </SidebarContent>
+  )
+}
 
-      <SidebarSection name="apps" minify={!open}>
-        <SidebarExpandableButton name="Home" icon={faHouse}>
-          <SidebarButton name="Level"></SidebarButton>
-          <SidebarButton name="Level"></SidebarButton>
-        </SidebarExpandableButton>
-        <SidebarExpandableButton name="Home" icon={faHouse}>
-          <SidebarExpandableButton name="Level"></SidebarExpandableButton>
-          <SidebarButton name="Level"></SidebarButton>
-        </SidebarExpandableButton>
-      </SidebarSection>
-    </div>
-  );
+interface SidebarProps {
+  isOpen: boolean
+  isMobile: boolean
+}
+
+export function Sidebar({ isOpen, isMobile }: SidebarProps) {
+  const content = (
+    <>
+      <SidebarLogo isOpen={isOpen} />
+      {getSidebarContent(isOpen, isMobile)}
+    </>
+  )
+
+  if (isMobile) {
+    return (
+      <SimpleBar
+        aria-expanded={isOpen}
+        className={'sidebar absolute-sidebar ' + (isOpen ? 'arrising-animation' : 'gone-animation')}
+      >
+        {content}
+      </SimpleBar>
+    )
+  }
+
+  if (isOpen) {
+    return (
+      <SimpleBar aria-expanded={isOpen} className={'sidebar fixed-sidebar opening-animation'}>
+        {content}
+      </SimpleBar>
+    )
+  } else {
+    return (
+      <div aria-expanded={isOpen} className={'sidebar fixed-sidebar closing-animation'}>
+        {content}
+      </div>
+    )
+  }
 }

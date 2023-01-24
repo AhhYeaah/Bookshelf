@@ -20,11 +20,14 @@ module.exports = {
       height: {
         'card-pristine': '416px',
         'card-pristine-image': '322px',
+        'card-touched-image': '191px',
 
-        'card-touched-image': '191px'
+        'minified-sidebar-button': '56px'
       },
       width: {
         'card': '300px',
+
+        'sidebar-button': '196px'
       },
       maxHeight: {
         'card-pristine': '416px',

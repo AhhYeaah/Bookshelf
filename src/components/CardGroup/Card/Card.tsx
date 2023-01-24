@@ -1,16 +1,16 @@
-import React from 'react';
-import { CardTimerGroup } from './CardTimerGroup/CardTimerGroup';
-import './Card.css';
+import React from 'react'
+import { CardTimerGroup } from './CardTimerGroup/CardTimerGroup'
+import './Card.css'
 
 interface CardProps {
   props: {
-    title?: string;
-    subtitle: string;
-    imageUrl?: string;
-    createdAt: Date;
-    updatedAt: Date;
-    positionInGrid: number;
-  };
+    title?: string
+    subtitle: string
+    imageUrl?: string
+    createdAt: Date
+    updatedAt: Date
+    positionInGrid: number
+  }
 }
 
 export function Card({
@@ -45,5 +45,5 @@ export function Card({
         <CardTimerGroup createdAt={createdAt} updatedAt={updatedAt} />
       </section>
     </section>
-  );
+  )
 }

@@ -1,0 +1,80 @@
+/**/
+.simplebar-scrollbar::before {
+    background-color: #8391a2;
+}
+
+.simplebar-track {
+    margin-top: 64px;
+}
+
+@keyframes closing {
+    from{
+     width: 260px;
+    }
+    to{
+     width: 72px
+    }
+ }
+ 
+.closing-animation{
+    animation: closing 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 72px;
+}
+
+@keyframes gone {
+    from{
+     width: 260px;
+     opacity: 0.5;
+    }
+    to{
+     width: 0px;
+     opacity: 0;
+    }
+ }
+ 
+.gone-animation{
+    animation: gone 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0px;
+}
+
+@keyframes arrising {
+    from{
+     width: 0px;
+    }
+    to{
+     width: 260px;
+    }
+ }
+.arrising-animation{
+    animation: arrising 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 260px;
+}
+
+
+
+@keyframes opening {
+    from{
+     width: 72px;
+    }
+    to{
+     width: 260px
+    }
+ }
+ 
+.opening-animation{
+    animation: opening 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 260px;
+}
+
+
+.sidebar{
+ @apply shrink-0 z-20 text-sidebar-item bg-sidebar-bg
+}
+
+.absolute-sidebar{
+    @apply absolute h-screen top-0 left-0
+}
+
+.fixed-sidebar{
+    @apply max-h-full
+}

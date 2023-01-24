@@ -1,0 +1,24 @@
+
+@keyframes opening-width {
+    from{
+     width: 0px;
+    }
+    to{
+     width: 196px;
+    }
+}
+
+ @keyframes opening-height {
+    from{
+     max-height: 0px;
+    }
+    to{
+     max-height: 3000px;
+    }
+}
+
+.drawer-opening-animation{
+    animation: opening-height 1200ms cubic-bezier(0.4, 0, 0.2, 1), opening-width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+

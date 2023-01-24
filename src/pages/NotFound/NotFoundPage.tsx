@@ -1,12 +1,12 @@
-import { faArrowLeftLong, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
-import './NotFoundPage.css';
+import { faArrowLeftLong, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Icon } from '../../components/Icon/Icon'
+import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton'
+import './NotFoundPage.css'
 
 export function NotFoundPage() {
-  const places = ['forest', 'dungeon', 'place'];
+  const places = ['forest', 'dungeon', 'place']
 
   return (
     <div className="w-screen h-screen flex-center overflow-hidden">
@@ -24,7 +24,7 @@ export function NotFoundPage() {
           <div className="mr-0 lg:mr-5 lg:ml-9 mb-4 lg:mb-0">
             <Link to={'/'}>
               <PrimaryButton>
-                <FontAwesomeIcon icon={faArrowLeftLong} className="mr-2" />
+                <Icon icon={faArrowLeftLong} className="mr-2" />
                 Go back to home
               </PrimaryButton>
             </Link>
@@ -38,5 +38,5 @@ export function NotFoundPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

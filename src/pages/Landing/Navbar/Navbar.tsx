@@ -1,10 +1,10 @@
-import './Navbar.css';
+import './Navbar.css'
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { NavbarButtonGroup } from './NavbarButtonGroup/NavbarButtonGroup';
-import { Logo } from '../../../components/Logo/Logo';
+import { NavbarButtonGroup } from './NavbarButtonGroup/NavbarButtonGroup'
+import { Logo } from '../../../components/Logo/Logo'
 
 export function Navbar() {
   return (
@@ -16,5 +16,5 @@ export function Navbar() {
         <NavbarButtonGroup></NavbarButtonGroup>
       </section>
     </header>
-  );
+  )
 }
